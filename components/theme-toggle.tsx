@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Moon, Sun } from "lucide-react";
+import { Button } from "@mui/material";
+import { LightMode, DarkMode } from "@mui/icons-material";
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
@@ -34,8 +34,8 @@ export function ThemeToggle() {
   };
 
   return (
-    <Button variant="outline" size="sm" onClick={toggleTheme}>
-      {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+    <Button variant="outlined" size="small" onClick={toggleTheme}>
+      {isDark ? <LightMode fontSize="small" /> : <DarkMode fontSize="small" />}
     </Button>
   );
 }

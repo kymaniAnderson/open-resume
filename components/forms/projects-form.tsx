@@ -15,7 +15,7 @@ import {
   Stack,
 } from "@mui/material";
 import { Add, Delete, Close } from "@mui/icons-material";
-import type { Project } from "@/types/resume";
+import type { Project } from "../../types/resume";
 
 interface ProjectsFormProps {
   projects: Project[];

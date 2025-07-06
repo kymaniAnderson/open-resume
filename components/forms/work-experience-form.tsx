@@ -20,7 +20,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { Add, Delete, Close } from "@mui/icons-material";
-import type { WorkExperience } from "@/types/resume";
+import type { WorkExperience } from "../../types/resume";
 
 interface WorkExperienceFormProps {
   workExperience: WorkExperience[];

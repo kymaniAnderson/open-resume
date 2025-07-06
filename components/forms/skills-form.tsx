@@ -12,7 +12,7 @@ import {
   Chip,
 } from "@mui/material";
 import { Add } from "@mui/icons-material";
-import type { Skills } from "@/types/resume";
+import type { Skills } from "../../types/resume";
 
 interface SkillsFormProps {
   skills: Skills;

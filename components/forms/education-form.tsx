@@ -18,7 +18,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { Add, Delete } from "@mui/icons-material";
-import type { Education } from "@/types/resume";
+import type { Education } from "../../types/resume";
 
 interface EducationFormProps {
   education: Education[];
