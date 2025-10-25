@@ -14,7 +14,11 @@ export function PDFDownloadButton({ resumeData }: PDFDownloadButtonProps) {
 
   const formatDate = (date: Date | null) => {
     if (!date) return "";
-    return date.toLocaleDateString("en-US", {
+    // Convert to Date object if it's a string
+    const dateObj = date instanceof Date ? date : new Date(date);
+    // Check if the date is valid
+    if (isNaN(dateObj.getTime())) return "";
+    return dateObj.toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
     });
@@ -498,6 +502,8 @@ export function PDFDownloadButton({ resumeData }: PDFDownloadButtonProps) {
       startIcon={<Download />}
       onClick={generatePDF}
       disabled={isGenerating}
+      aria-label={isGenerating ? "Generating PDF" : "Download resume as PDF"}
+      aria-busy={isGenerating}
     >
       {isGenerating ? "Generating..." : "Download PDF"}
     </Button>

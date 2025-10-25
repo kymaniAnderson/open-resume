@@ -19,7 +19,11 @@ interface ResumePreviewProps {
 export function ResumePreview({ resumeData, customTheme }: ResumePreviewProps) {
   const formatDate = (date: Date | null) => {
     if (!date) return "";
-    return date.toLocaleDateString("en-US", {
+    // Convert to Date object if it's a string
+    const dateObj = date instanceof Date ? date : new Date(date);
+    // Check if the date is valid
+    if (isNaN(dateObj.getTime())) return "";
+    return dateObj.toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
     });
